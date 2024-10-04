@@ -1,0 +1,27 @@
+# Visual Studio Code files
+.vscode/
+
+# Ignore node_modules (for Node.js projects)
+target/*
+
+# Ignore Python bytecode
+__pycache__/
+*.py[cod]
+
+# Ignore logs
+*.log
+
+# Ignore environment variables and sensitive data
+.env
+.env.local
+.env.*.local
+
+# Ignore all .sh and .py files
+*.sh
+*.py
+
+# Exclude the articles folder from ignoring .sh and .py files
+articles/*
+.classpath
+.project
+.settings
