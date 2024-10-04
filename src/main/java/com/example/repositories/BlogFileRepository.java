@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.logging.Logger;
 
 import javax.inject.Inject;
 
@@ -17,6 +18,7 @@ import com.example.exeptions.BlogException;
 import com.example.mappers.PostMapper;
 import com.example.model.Post;
 import com.example.util.FileUtils;
+import com.example.util.StringUtils;
 
 public class BlogFileRepository implements CrudRepository<Post> {
 
@@ -24,6 +26,7 @@ public class BlogFileRepository implements CrudRepository<Post> {
     private FileUtils fileUtils;
     @Inject
     private PostMapper postMapper;
+    private static final Logger logger = Logger.getLogger(BlogFileRepository.class.getCanonicalName());
 
     @Override
     public Post save(Post entity) {
@@ -32,13 +35,14 @@ public class BlogFileRepository implements CrudRepository<Post> {
             entity.setId(UUID.randomUUID().toString());
         }
         // generate filename
-        String fileName = entity.getId() + "_" + entity.getPubTime().toInstant(ZoneOffset.UTC).toEpochMilli()
+        String fileName = entity.getId()
                 + Constants.ARTICLES_FILE_EXTENSION;
         String filePath = Constants.ARTICLES_DIR_PATH + fileName;
         // map post to json
+        entity.setContent(entity.getContent().replaceAll("\\r\\n|\\r|\\n", " "));
         String jsonPost = postMapper.mapToJson(entity);
         // save post int the generated file
-        fileUtils.writeToFile(filePath, jsonPost);
+        fileUtils.writeToFile(filePath, StringUtils.escapeCommasInQuotes(jsonPost));
         return entity;
     }
 
@@ -80,9 +84,14 @@ public class BlogFileRepository implements CrudRepository<Post> {
     }
 
     @Override
-    public boolean delete(Matcher<Post> matcher) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'delete'");
+    public boolean delete(String id) {
+        String fileName = id
+                + Constants.ARTICLES_FILE_EXTENSION;
+        String filePath = Constants.ARTICLES_DIR_PATH + fileName;
+        try {
+            return Files.deleteIfExists(Paths.get(filePath));
+        } catch (IOException e) {
+            throw new BlogException(e.getMessage(), e);
+        }
     }
-
 }

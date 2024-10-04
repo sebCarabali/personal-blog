@@ -43,7 +43,7 @@
                         <span>${fn:formatDateTime(post.pubTime, "MMMM d, yyyy")}</span>
                         <div class="card-options">
                             <a href="javascript:void(0)" class="edit-btn" data-id="${post.id}">Edit</a>
-                            <a href="${pageContext.request.contextPath}/delete?id=${post.id}" class="delete-btn" data-id="${post.id}">Delete</a>
+                            <a href="${pageContext.request.contextPath}/delete-post?id=${post.id}" class="delete-btn" data-id="${post.id}">Delete</a>
                         </div>
                     </div>
                 </div>
