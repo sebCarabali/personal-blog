@@ -1,0 +1,402 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* General styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header styles */
+header {
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.8em;
+}
+
+/* Style for the navigation bar */
+nav {
+    display: flex;
+    justify-content: space-between; /* Space between left and right nav items */
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Space between nav items */
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ff4d4d;
+}
+
+/* Aligning left side navigation */
+.nav-left {
+    display: flex;
+}
+
+/* Aligning right side login/logout buttons */
+.nav-right {
+    display: flex;
+}
+
+/* Login/Logout button style */
+.nav-btn {
+    background-color: #fff;
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: #ff4d4d;
+    color: #fff;
+}
+
+/* Main content styles */
+.main-content {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Blog post styles */
+.blog-post {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Blog post title link styles */
+.blog-post h2 a {
+    color: #2575fc; /* Link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.blog-post h2 a:hover {
+    color: #ffcc00; /* Color change on hover */
+    text-decoration: underline; /* Underline on hover for emphasis */
+}
+
+.blog-post p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+/* Date styles */
+.pub-date {
+    font-size: 0.9em;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+/* Single post content styles */
+.single-post-content {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.single-post-content .blog-post h2 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.single-post-content .blog-post p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.single-post-content .pub-date {
+    font-size: 0.9em;
+    color: #999;
+}
+
+.single-post-content .author {
+    font-weight: bold;
+}
+
+/* Login form container */
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;  /* Optional: a light border around the container */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* The shadow effect */
+}
+
+/* Login form styles */
+.login-form h2 {
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+    font-size: 1.8em;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1em;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+}
+
+.form-group input:focus {
+    border-color: #6a11cb;
+    background-color: #fff;
+    outline: none;
+}
+
+/* Submit button */
+.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #6a11cb !important;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #892fe9;
+}
+
+/* Error message styles */
+.error-message {
+    background-color: #ff4d4d;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0 auto 20px auto;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.success-message {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0 auto 20px auto;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+
+/* Footer styles */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-left, .nav-right {
+        margin-bottom: 10px;
+        gap: 10px;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    .single-post-content .blog-post h2 {
+        font-size: 1.8em;
+    }
+
+    .login-container {
+        padding: 20px;
+    }
+
+    .login-form h2 {
+        font-size: 1.5em;
+    }
+}
+
+/* Dashboard styles */
+.dashboard {
+    padding: 20px;
+}
+
+/* Header styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.create-post-btn {
+    background-color: #2575fc;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.create-post-btn:hover {
+    background-color: #1a5cb8;
+}
+
+/* Card container styles */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between cards */
+}
+
+/* Card styles */
+.card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 1 1 calc(25% - 20px) !important; /* Responsive card width */
+    box-sizing: border-box;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.card-title {
+    font-size: 1.5em;
+    margin: 0 0 10px 0;
+}
+
+.card-content {
+    font-size: 1em;
+    margin: 0 0 10px 0;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.edit-btn {
+    background-color: #ffb300;
+    color: white; /* White text */
+    border: none; /* Remove border */
+    padding: 8px 12px; /* Padding around the text */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer */
+    text-decoration: none; /* Remove underline */
+    font-size: 14px; /* Font size */
+    transition: background-color 0.3s ease; 
+}
+
+.edit-btn:hover {
+    background-color: #e0a300;
+}
+
+.delete-btn {
+    background-color: #e74c3c; /* Red background for the delete button */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    padding: 8px 12px; /* Padding around the text */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer */
+    text-decoration: none; /* Remove underline */
+    font-size: 14px; /* Font size */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.delete-btn:hover {
+    background-color: #c0392b; /* Darker red on hover */
+}
+
+.card-options {
+    display: flex;
+    gap: 0.325rem;
+    align-items: center;
+}
+
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 calc(50% - 20px); /* Two cards per row */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        flex: 1 1 100%; /* One card per row */
+    }
+}
+
