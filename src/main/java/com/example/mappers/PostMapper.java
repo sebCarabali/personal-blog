@@ -1,13 +1,9 @@
 package com.example.mappers;
 
-import java.util.logging.Logger;
-
 import com.example.model.Post;
 import com.example.util.DateUtils;
 
 public class PostMapper implements Mapper<Post> {
-
-    private static final Logger logger = Logger.getLogger(PostMapper.class.getCanonicalName());
 
     @Override
     public String mapToJson(Post entity) {
