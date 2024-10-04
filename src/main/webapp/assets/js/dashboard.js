@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
         form.action = `${contextPath}/create-post`; // Set action to create post
         submitBtn.value = "Create Post"; // Set button text to "Create Post"
         modalTitle.innerText = "Create a New Post"; // Set modal title
-
+        form.method = 'post';
         // Open the modal
         modal.style.display = "block";
     });
@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     titleInput.value = data.title;
                     contentInput.value = data.content;
                     form.action = `${contextPath}/update-post`; // Set action to update post
+                    form.method = 'PUT';
                     submitBtn.value = "Update Post"; // Set button text to "Update Post"
                     modalTitle.innerText = "Update Post"; // Set modal title
 

@@ -30,4 +30,9 @@ public class PostServiceImpl implements PostService {
     public Post save(Post post) {
         return crudRepository.save(post);
     }
+
+    @Override
+    public void delete(String id) {
+        crudRepository.delete(id);
+    }
 }

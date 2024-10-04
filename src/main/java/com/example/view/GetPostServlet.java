@@ -1,7 +1,6 @@
 package com.example.view;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.util.Optional;
 
 import javax.inject.Inject;
